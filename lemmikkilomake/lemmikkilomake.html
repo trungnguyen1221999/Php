@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lemmikkilomake</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 400px;
+      }
+
+      .horizontal {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        gap: 10px;
+      }
+
+      .column {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      input[type="text"] {
+        width: 200px; /* width mặc định vừa với container */
+        box-sizing: border-box; /* để padding không làm rộng quá */
+      }
+
+      input[type="date"] {
+        width: 150px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HTML lomakeharjoitus</h1>
+    <br />
+    <form>
+      <label class="column">
+        Lemmikin nimi:
+        <input
+          type="text"
+          name="lemmikin_nimi"
+          placeholder="Karvinen"
+          maxlength="10"
+        />
+      </label>
+      <label class="column">
+        Lemmikin syntymäpäivä:
+        <input type="date" name="lemmikin_syntymapaiva" id="syntymapaiva" />
+      </label>
+      <p>Lemmikin eläinlaji:</p>
+      <label>
+        <input type="radio" name="elainlaji" value="kissa" /> Kissa
+      </label>
+      <label>
+        <input type="radio" name="elainlaji" value="koira" /> Koira
+      </label>
+      <label>
+        <input type="radio" name="elainlaji" value="hamsteri" /> Hamsteri
+      </label>
+      <label>
+        <input type="radio" name="elainlaji" value="kaarme" /> Käärme
+      </label>
+      <p>Lemmikin lempiaiat:</p>
+      <label>
+        <input type="checkbox" name="lempiaiat" value="nukuminen" />
+        Nukuminen
+      </label>
+      <label>
+        <input type="checkbox" name="lempiaiat" value="ruoka" /> Ruoka
+      </label>
+      <label>
+        <input type="checkbox" name="lempiaiat" value="leikkiminen" />
+        Leikkiminen
+      </label>
+      <label>
+        <input type="checkbox" name="lempiaiat" value="juokseminen" />
+        Juokseminen
+      </label>
+      <div>
+        <p>Lemmikin väri:</p>
+        <label>
+          Valitse väri: <input type="color" name="vari" value="#ffff00" />
+        </label>
+      </div>
+      <div class="horizontal">
+        <p>Lemmikin varusteet:</p>
+        <label>
+          <select name="varusteet" id="varusteet">
+            <option value="panta">Panta</option>
+            <option value="hihna">Hihna</option>
+            <option value="kuljetuslaatikko">Kuljetuslaatikko</option>
+            <option value="lelut">Lelut</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <button type="submit">Lähetä</button>
+        <button type="reset">Resetoi</button>
+      </div>
+    </form>
+  </body>
+</html>
