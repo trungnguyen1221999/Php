@@ -1,6 +1,6 @@
 <?php
-$tuntipalkka = $_POST["hourly wage"] ?? 0;
-$tuntimaara = $_POST["hour"] ?? 0;
+$tuntipalkka = $_POST["hourlywage"] ?? 0;
+$tuntimaara = $_POST["hourly"] ?? 0;
 $yhteispalkka = $tuntipalkka * $tuntimaara;
 echo "Joint salary: " . $yhteispalkka;
 ?>
