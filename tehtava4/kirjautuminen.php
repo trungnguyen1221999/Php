@@ -1,6 +1,6 @@
     <?php
     // Check if form is submitted
-    submitted if ($_SERVER["REQUEST_METHOD"] == "POST") {
+ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Receive form data
         $username = $_POST['username'] ?? '';
         $password = $_POST['password'] ?? '';
