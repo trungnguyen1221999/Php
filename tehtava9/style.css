@@ -1,0 +1,351 @@
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #00dc64;
+  --secondary-color: black;
+  --text-color: #333;
+  --background-color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Sora", sans-serif;
+}
+
+.btn {
+  font-size: 1.4rem;
+  padding: 12px 24px;
+  background-color: var(--secondary-color);
+  color: #fff;
+  border-radius: 22px;
+  font-weight: 300;
+}
+
+.container {
+  max-width: 1125px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+/* header -nav */
+.nav {
+  max-width: 1780px;
+  padding: 20px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.nav__left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.nav__left--list {
+  display: flex;
+  gap: 15px;
+}
+
+.logo {
+  width: 70px;
+  cursor: pointer;
+}
+
+.shop {
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn__login {
+  background-color: #fff;
+  color: black;
+  border: 1px solid black;
+}
+
+/* hero */
+.hero {
+  background: url(./bg.jpg) no-repeat center center/cover;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 490px;
+}
+
+.hero__img--left {
+  object-fit: cover;
+  overflow: hidden;
+  height: 490px;
+}
+
+.hero__right {
+  position: relative;
+  width: 25%;
+}
+
+.hero__img--right1 {
+  position: absolute;
+  bottom: 0;
+  left: -40px;
+  object-fit: cover;
+}
+
+.hero__img--right2 {
+  position: absolute;
+  object-fit: cover;
+  top: -15px;
+  left: -8px;
+}
+
+.week {
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.week__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.day {
+  padding: 18px 30px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.active {
+  background-color: var(--primary-color);
+}
+
+/* main */
+.main {
+  padding-top: 60px;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+/* trending */
+.trending__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* grid-template-rows: repeat(2, 1fr); */
+  gap: 20px;
+}
+
+.trending__item {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.trending__img,
+.trending__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.trending__img {
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+}
+
+.trending__content {
+  z-index: 2;
+  background-color: var(--primary-color);
+  opacity: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.trending__item:hover .trending__img {
+  opacity: 0;
+}
+
+.trending__item:hover .trending__content {
+  opacity: 1;
+}
+
+/* Hình ảnh background theo item */
+.trending__item1 .trending__img {
+  background: url(./cate-01.jpg) no-repeat center center/cover;
+}
+.trending__item2 .trending__img {
+  background: url(./cate-02.jpg) no-repeat center center/cover;
+}
+.trending__item3 .trending__img {
+  background: url(./cate-03.jpg) no-repeat center center/cover;
+}
+.trending__item4 .trending__img {
+  background: url(./cate-04.jpg) no-repeat center center/cover;
+}
+.trending__item5 .trending__img {
+  background: url(./cate-05.jpg) no-repeat center center/cover;
+}
+.trending__item6 .trending__img {
+  background: url(./cate-06.jpg) no-repeat center center/cover;
+}
+.trending__item7 .trending__img {
+  background: url(./cate-07.jpg) no-repeat center center/cover;
+}
+.trending__item8 .trending__img {
+  background: url(./cate-08.jpg) no-repeat center center/cover;
+}
+.trending__item9 .trending__img {
+  background: url(./cate-09.jpg) no-repeat center center/cover;
+}
+
+/* Optional: Nếu item9 muốn to hơn */
+.trending__item9 {
+  grid-column: span 2;
+}
+
+/* Overlay content */
+.trending__item--heading,
+.trending-content__item--heading {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.trending__item--views,
+.trending-content__item--auth {
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.trending-content__item--desc {
+  font-size: 0.8rem;
+  width: 90%;
+  color: hsl(0, 0%, 30%);
+  border-top: 1px solid hsl(0, 0%, 30%);
+  padding-top: 10px;
+  text-align: left;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.trending__item9 {
+  width: 440px;
+  height: 210px;
+  grid-column: span 2;
+}
+
+.new {
+  padding-top: 30px;
+}
+
+.h2_heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.new .trending__item1 .trending__img {
+  background: url(./new-01.jpg) no-repeat center center/cover;
+}
+.new .trending__item2 .trending__img {
+  background: url(./new-02.jpg) no-repeat center center/cover;
+}
+.new .trending__item3 .trending__img {
+  background: url(./new-03.jpg) no-repeat center center/cover;
+}
+.new .trending__item4 .trending__img {
+  background: url(./new-04.jpg) no-repeat center center/cover;
+}
+
+.genres {
+  padding-top: 30px;
+}
+
+.horror,
+.sports {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #f97316;
+  color: white;
+}
+
+.horror_heading {
+  position: absolute;
+}
+
+.horror_desc {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+}
+
+.genres .badge {
+  background-color: #f97316;
+  color: black;
+}
+
+.sports {
+  background-color: var(--primary-color);
+}
+.sport {
+  padding-top: 20px;
+}
+
+.sport .trending__item1 .trending__img {
+  background: url(./cate-05.jpg) no-repeat center center/cover;
+}
+.sport .trending__item2 .trending__img {
+  background: url(./cate-06.jpg) no-repeat center center/cover;
+}
+.sport .trending__item3 .trending__img {
+  background: url(./cate-07.jpg) no-repeat center center/cover;
+}
+.sport .trending__item4 .trending__img {
+  background: url(./cate-08.jpg) no-repeat center center/cover;
+}
