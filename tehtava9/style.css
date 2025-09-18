@@ -196,7 +196,6 @@ body {
 .trending__item:hover .trending__img {
   opacity: 0;
 }
-
 .trending__item:hover .trending__content {
   opacity: 1;
 }
@@ -283,7 +282,7 @@ body {
 .h2_heading {
   font-size: 2rem;
   font-weight: bold;
-  margin: 30px auto;
+  margin-bottom: 30px;
   text-align: center;
 }
 

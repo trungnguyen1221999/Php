@@ -9,24 +9,38 @@
 </head>
 <body>
   <!-- Header -->
-  <header class="header">
-    <nav class="nav">
-      <section class="nav__left">
-        <img class="logo" src="./logo.svg" alt="logo image" />
-        <ul class="nav__left--list">
-          <li><a href="#">ORIGINAL</a></li>
-          <li><a href="#">GENRE</a></li>
-          <li><a href="#">POPULAR</a></li>
-          <li><a href="#">CANVAS</a></li>
-        </ul>
-      </section>
-      <section class="nav__right">
-        <p class="shop">WEBToon Shop</p>
-        <a href="#" class="btn btn__publish">Publish</a>
-        <a href="#" class="btn btn__login">Login</a>
-      </section>
-    </nav>
-  </header>
+
+  <?php
+// Menu items: key = tên menu, value = link tương ứng
+$menuItems = [
+    'HOME' => 'index.php', 
+    'ABOUT US' => 'about.html',
+    'CONTACT' => 'contact.html'
+];
+
+// Lấy trang hiện tại để highlight menu active
+$currentPage = basename($_SERVER['PHP_SELF']);
+?>
+
+<header class="header">
+  <nav class="nav">
+    <section class="nav__left">
+      <img class="logo" src="./logo.svg" alt="logo image" />
+      <ul class="nav__left--list">
+        <?php foreach($menuItems as $name => $link): ?>
+          <li class="<?php if($currentPage === $link) echo 'active'; ?>">
+            <a class="abc" href="<?= $link ?>"><?= $name ?></a>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+    </section>
+    <section class="nav__right">
+      <p class="shop">WEBToon Shop</p>
+      <a href="#" class="btn btn__publish">Publish</a>
+      <a href="#" class="btn btn__login">Login</a>
+    </section>
+  </nav>
+</header>
 
   <!-- Hero -->
   <section class="hero">
@@ -37,6 +51,21 @@
     </div>
   </section>
 
+  <?php
+// Mảng các ngày trong tuần
+$weekDays = ['MON','TUE','WED','THU','FRI','SAT','SUN'];
+
+// Lấy ngày hôm nay (0 = Sunday, 1 = Monday,...)
+$selectedDay = isset($_GET['day']) ? $_GET['day'] : $weekDays[date('N')-1]; // nếu không có, mặc định ngày hôm nay
+?>
+<ul class="week__list">
+    <?php foreach($weekDays as $day): ?>
+        <li class="day <?php if($day === $selectedDay) echo 'active'; ?>">
+            <a href="?day=<?= $day ?>"><?= $day ?></a>
+        </li>
+    <?php endforeach; ?>
+</ul>
+<div style="height: 10px; width: 100vw;"></div>
   <!-- Trending -->
   <section class="container">
     <h2 class="h2_heading">TRENDING</h2>
