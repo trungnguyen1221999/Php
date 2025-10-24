@@ -14,8 +14,8 @@
 // Menu items: key = tên menu, value = link tương ứng
 $menuItems = [
     'HOME' => 'index.php', 
-    'ABOUT US' => 'about.html',
-    'CONTACT' => 'contact.html'
+    'ABOUT US' => 'about.php',
+    'CONTACT' => 'contact.php'
 ];
 
 // Lấy trang hiện tại để highlight menu active
@@ -26,7 +26,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
   <nav class="nav">
     <section class="nav__left">
       <img class="logo" src="./logo.svg" alt="logo image" />
-      <ul class="nav__left--list">
+      <ul class="nav__left--list ">
         <?php foreach($menuItems as $name => $link): ?>
           <li class="<?php if($currentPage === $link) echo 'active'; ?>">
             <a class="abc" href="<?= $link ?>"><?= $name ?></a>

@@ -1,6 +1,7 @@
 html {
   font-size: 10px;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 :root {
@@ -347,4 +348,23 @@ body {
 }
 .sport .trending__item4 .trending__img {
   background: url(./cate-08.jpg) no-repeat center center/cover;
+}
+/* ============================= */
+/* ======= RESPONSIVE ========= */
+/* ============================= */
+@media (max-width: 768px) {
+  .nav__right {
+    display: none;
+  }
+  .nav__left {
+    justify-content: space-between;
+  }
+  .week__list {
+    flex-wrap: wrap;
+  }
+  .trending__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    flex-wrap: wrap;
+  }
 }
