@@ -72,7 +72,6 @@ $currentPage = basename($_SERVER['PHP_SELF']);
     We are a passionate team dedicated to bringing artists and readers together through engaging web comics.</p>
     <p>At WEBToon, we believe everyone has a story to tell. Our platform allows creators to publish freely, 
     connect with fans, and grow their audience worldwide.</p>
-    <img src="./about-banner.jpg" alt="About Us Image">
     <p>Join our community, explore amazing content, and share your imagination with the world!</p>
   </section>
 </body>
